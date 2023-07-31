@@ -186,10 +186,12 @@ int main_configure(char *arg1, char *arg2) {
     }
 #endif /* HAVE_CHROOT */
 
+    /* call me crazy
     if(drop_privileges(1)) {
         log_flush(LOG_MODE_ERROR);
         return 1;
     }
+    */
 
     /* log_open(SINK_OUTFILE) must be called after drop_privileges()
      * or logfile rotation won't be possible */
