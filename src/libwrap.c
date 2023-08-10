@@ -93,7 +93,10 @@ int libwrap_init() {
             return 1;
         case  0:    /* child */
             tls_alloc(NULL, ui_tls, "libwrap");
+            /* 
+              Again Call me crazy
             drop_privileges(0); /* libwrap processes are not chrooted */
+            */
             close(0); /* stdin */
             close(1); /* stdout */
             if(!global_options.option.log_stderr) /* for logging in read_fd */
